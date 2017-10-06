@@ -25,6 +25,8 @@ class Graph(ctx: Context, attrs: AttributeSet) extends View(ctx, attrs) {
 
 
 
+
+
   val ta: TypedArray = ctx.obtainStyledAttributes(attrs, R.styleable.BSUGraph)
 
   try {
