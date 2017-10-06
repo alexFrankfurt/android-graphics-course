@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BSUGraph">
+        <attr name="showTitle" format="boolean"/>
+        <attr name="graphTitle" format="string"/>
+        <attr name="numberX" format="integer"/>
+        <attr name="numberY" format="integer"/>
+
+        <attr name="grColor" format="color"/>
+        <attr name="grBackColor" format="color"/>
+        <attr name="axisColor" format="color"/>
+
+        <attr name="axisStyle" format="enum">
+            <enum name="cross" value="0"/>
+            <enum name="box" value="1"/>
+            <enum name="none" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>
