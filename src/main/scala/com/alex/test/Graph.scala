@@ -13,8 +13,6 @@ class Graph(ctx: Context, attrs: AttributeSet) extends View(ctx, attrs) {
   var numberX = 0
   var numberY = 0
 
-  Log.w("text:", graphTitle)
-
   var grColor: Int = Color.rgb(0, 0, 0)
   var grBackColor: Int = Color.rgb(0, 0, 0)
   var axisColor: Int = Color.rgb(0, 0, 0)
@@ -35,8 +33,7 @@ class Graph(ctx: Context, attrs: AttributeSet) extends View(ctx, attrs) {
     numberX = ta.getInteger(R.styleable.BSUGraph_numberX, 5)
     numberY = ta.getInteger(R.styleable.BSUGraph_numberY, 5)
     grColor = ta.getColor(R.styleable.BSUGraph_grColor, 0)
-  }finally {
+  } finally {
     ta.recycle()
   }
-  Log.w("text: ", graphTitle)
 }

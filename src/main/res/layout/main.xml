@@ -51,8 +51,6 @@
             <!--android:layout_centerVertical="true"/>-->
 
 
-
-
     <com.alex.test.Graph
             android:id="@+id/custGr"
             android:layout_width="match_parent"
@@ -61,7 +59,12 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="109dp"
             android:layout_marginTop="30dp"
-            graph:graphTitle="Graphhhh"/>
+            graph:graphTitle="Alexander" />
+            <!-- graph:showTitle = "true" -->
+            <!-- graph:graphColor = "#FF0000" -->
+            <!-- graph:graphBackgroundColor = "#FFFF90" -->
+            <!-- graph:axisStyle = "box" -->
+            <!-- graph:numberXmarks="8"/> -->
 
     <TextView
             android:text="TextView"

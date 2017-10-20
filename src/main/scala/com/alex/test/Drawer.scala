@@ -48,7 +48,7 @@ class Drawer(sh: SurfaceHolder) extends Thread {
       canvas.drawCircle(540, 320, 50, paint)
       canvas.drawArc(arc,0, 120, true, paint)
     } else {
-      Log.e("jfdls", "fjdkl")
+      Log.e("Drawer thread", "fail")
     }
 
   }
