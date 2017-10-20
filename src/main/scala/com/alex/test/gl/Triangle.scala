@@ -49,5 +49,21 @@ class Triangle {
   val CoordPerVert = 3
 
   val vertCount = triangleCoords.length / CoordPerVert
-  val vertStride = CoordPerVert * 4k
+  val vertStride = CoordPerVert * 4
+
+  def draw(): Unit = {
+    GLES20.glUseProgram(prog)
+    val posBundle = GLES20.glGetAttribLocation(prog, "vPosition")
+    GLES20.glEnableVertexAttribArray(posBundle)
+
+    GLES20.glVertexAttribPointer(posBundle,CoordPerVert,
+      GLES20.GL_FLOAT, false, vertStride, vertBuf)
+
+    val colorBundle = GLES20.glGetUniformLocation(prog, "vColor")
+    GLES20.glUniform4fv(colorBundle, 1, colors, 0)
+
+    GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertCount)
+
+    GLES20.glDisableVertexAttribArray(posBundle)
+  }
 }
