@@ -9,17 +9,20 @@ import com.alex.test.MainActivity
 
 class MyGLRenderer extends GLSurfaceView.Renderer {
 
-
+  var triangle: Triangle = _
 
 
   override def onDrawFrame(gl10: GL10) = {
-    GLES20.glClearColor(0f, MainActivity.green, MainActivity.blue, 1)
-    GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)
-
+//    GLES20.glClearColor(0f, MainActivity.green, MainActivity.blue, 1)
+//    GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)
+    GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT)
+    triangle.draw()
   }
 
   override def onSurfaceCreated(gl10: GL10, eglConfig: EGLConfig) = {
-    GLES20.glClearColor(0, 4, 3, 2)
+//    GLES20.glClearColor(0, 4, 3, 2)
+    GLES20.glClearColor(.9f, 1, .9f, 1)
+    triangle = new Triangle()
   }
 
   override def onSurfaceChanged(gl10: GL10, w: Int, h: Int) = {

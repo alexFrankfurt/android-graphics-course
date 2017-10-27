@@ -103,16 +103,16 @@ class MainActivity extends AppCompatActivity {
     sv = new MyGLSurfaceView(this, new MyGLRenderer())
     setContentView(sv)
 
-
-    val inflater: LayoutInflater =
-      getSystemService(Context.LAYOUT_INFLATER_SERVICE).asInstanceOf[LayoutInflater]
-    val rl: RelativeLayout =
-      inflater.inflate(R.layout.butt, null).asInstanceOf[RelativeLayout]
-    val params: ViewGroup.LayoutParams =
-      new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                                 ViewGroup.LayoutParams.MATCH_PARENT)
-
-    addContentView(rl, params)
+//
+//    val inflater: LayoutInflater =
+//      getSystemService(Context.LAYOUT_INFLATER_SERVICE).asInstanceOf[LayoutInflater]
+//    val rl: RelativeLayout =
+//      inflater.inflate(R.layout.butt, null).asInstanceOf[RelativeLayout]
+//    val params: ViewGroup.LayoutParams =
+//      new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+//                                 ViewGroup.LayoutParams.MATCH_PARENT)
+//
+//    addContentView(rl, params)
 
   }
 

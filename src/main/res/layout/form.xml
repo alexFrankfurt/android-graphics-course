@@ -9,7 +9,6 @@
             android:text="Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="1dp"
             android:onClick="addElem"
             tools:layout_gravity="bottom"/>
     <EditText
