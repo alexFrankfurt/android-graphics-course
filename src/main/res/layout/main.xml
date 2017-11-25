@@ -24,17 +24,6 @@
 
 
 
-   <!---->
-    <!--<TextView android:layout_width="match_parent" android:layout_height="match_parent"-->
-              <!--android:visibility="invisible"-->
-    <!--android:id="@+id/text"/>-->
-    <!--<ImageView-->
-            <!--android:src="@drawable/ball"-->
-            <!--android:layout_width="119dp"-->
-            <!--android:layout_height="116dp"-->
-            <!--android:id="@+id/imageView"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_alignParentTop="true"/>-->
 
 
 

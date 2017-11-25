@@ -1,14 +1,12 @@
 package com.alex.test.gl
 
-import java.nio.{ByteBuffer, ByteOrder, FloatBuffer}
+import java.nio.{ByteBuffer, ByteOrder}
 
 import android.opengl.GLES20
-import android.util.Log
 
-class Triangle {
+class Triangle(textureID: Int) {
 
-
-  val vertShaderCode =
+  val vertShaderCode: String =
     """
       |attribute vec4 vPosition;
       |void main() {
@@ -16,7 +14,7 @@ class Triangle {
       |}
     """.stripMargin
 
-  val fragmentShaderCode =
+  val fragmentShaderCode: String =
     """
       |precision mediump float;
       |uniform vec4 vColor;
@@ -27,6 +25,7 @@ class Triangle {
 
 
 
+
   val triangleCoords: Array[Float] = Array(   0f, 0.62f, 0f,
     -0.5f, -0.3f, 0f,
     -0.5f, -0.3f, 0f)
@@ -34,10 +33,10 @@ class Triangle {
   val colors: Array[Float] = Array(0.6f, 0.77f, 0.2f, 1f)
 
 
-  val CoordPerVert = 3
+  val CoordPerVertex = 3
 
-  val vertCount = triangleCoords.length / CoordPerVert
-  val vertStride = CoordPerVert * 4
+  val vertCount = triangleCoords.length / CoordPerVertex
+  val vertStride = CoordPerVertex * 4
 
   val bb: ByteBuffer = ByteBuffer.allocateDirect(triangleCoords.length * 4)
   bb.order(ByteOrder.nativeOrder())
@@ -45,8 +44,8 @@ class Triangle {
   vertBuf.put(triangleCoords)
   vertBuf.position(0)
 
-  val vertShader = MyGLRenderer.loadShader(GLES20.GL_VERTEX_SHADER, vertShaderCode)
-  val fragmShader = MyGLRenderer.loadShader(GLES20.GL_FRAGMENT_SHADER, fragmentShaderCode)
+  val vertShader = TriangleGLRenderer.loadShader(GLES20.GL_VERTEX_SHADER, vertShaderCode)
+  val fragmShader = TriangleGLRenderer.loadShader(GLES20.GL_FRAGMENT_SHADER, fragmentShaderCode)
   val prog = GLES20.glCreateProgram()
   var posBundle: Int = _
   var colorBundle: Int = _
@@ -62,7 +61,7 @@ class Triangle {
     posBundle = GLES20.glGetAttribLocation(prog, "vPosition")
     GLES20.glEnableVertexAttribArray(posBundle)
 
-    GLES20.glVertexAttribPointer(posBundle,CoordPerVert,
+    GLES20.glVertexAttribPointer(posBundle,CoordPerVertex,
       GLES20.GL_FLOAT, false, vertStride, vertBuf)
 
     colorBundle = GLES20.glGetUniformLocation(prog, "vColor")

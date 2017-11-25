@@ -4,7 +4,7 @@ import android.content.Context
 import android.opengl.GLSurfaceView
 import android.view.MotionEvent
 
-class MyGLSurfaceView(ctx: Context, sr: MyGLRenderer)  extends GLSurfaceView(ctx) {
+class TriangleGLSurfaceView(ctx: Context, sr: TriangleGLRenderer)  extends GLSurfaceView(ctx) {
   setEGLContextClientVersion(2)
 
   setRenderer(sr)

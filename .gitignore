@@ -5,3 +5,4 @@ local.properties
 proguard-sbt.txt
 .idea/
 projectFilesBackup/
+z-platform.sbt
