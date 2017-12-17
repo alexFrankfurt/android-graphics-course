@@ -95,7 +95,7 @@ class Pyramid(textureID: Int) {
 
   // Constr
   val bb: ByteBuffer =
-    ByteBuffer.allocateDirect(pyramidCoords.length*4);//4 bytes for 1 float
+    ByteBuffer.allocateDirect(pyramidCoords.length * 4);//4 bytes for 1 float
   bb.order(ByteOrder.nativeOrder())
   vertexBuffer = bb.asFloatBuffer()
   vertexBuffer.put(pyramidCoords)
